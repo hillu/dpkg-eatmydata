@@ -1,0 +1,11 @@
+#!/bin/sh
+if [ -e /usr/lib/libeatmydata.so ]; then
+    [ -n "$LD_PRELOAD" ] && LD_PRELOAD="$LD_PRELOAD:"
+    LD_PRELOAD="$LD_PRELOAD$so"
+fi
+for so in /usr/lib/*/libeatmydata.so; do
+    [ -n "$LD_PRELOAD" ] && LD_PRELOAD="$LD_PRELOAD:"
+    LD_PRELOAD="$LD_PRELOAD$so"
+done
+export LD_PRELOAD
+exec "$0.distrib" "$@"

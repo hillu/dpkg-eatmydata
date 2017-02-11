@@ -1,0 +1,5 @@
+dpkg-eatmydata (0.1) unstable; urgency=low
+
+  * Initial release
+
+ -- Hilko Bengen <bengen@debian.org>  Sat, 11 Feb 2017 13:40:27 +0100

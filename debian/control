@@ -1,0 +1,21 @@
+Source: dpkg-eatmydata
+Section: admin
+Priority: optional
+Maintainer: Hilko Bengen <bengen@debian.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.8
+
+Package: dpkg-eatmydata
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends},
+Pre-Depends: eatmydata
+Description: simple wrapper to make dpkg faster (and unsafe)
+ This package's purpose is to trade safety for execution speed in
+ operations of _dpkg_ (and any program it may execute) by using
+ eatmydata to disable disk synchronization calls. This is useful in
+ situations where data loss in case of a power outage is not a
+ concert, e.g. in setting up ephemeral chroot environments for
+ building Debian packages.
+ .
+ Do not use in production environments where you might care about data
+ integrity!
